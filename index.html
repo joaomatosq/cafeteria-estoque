@@ -35,8 +35,26 @@
             <button>
                 Gerar Arquivo
             </button>
+            
+            <button id="btnVer">
+                Ver Boletim
+            </button>
+        </div>
+
+        <div id="visualizador" hidden>
+            <iframe src="python/boletim.pdf" title="Boletim de estoque"></iframe>
         </div>
     </main>
+
+    <script>
+        const btn = document.getElementById("btnVer");
+        const area = document.getElementById("visualizador");
+
+        btn.addEventListener("click", () => {
+            area.hidden = !area.hidden;
+            btn.textContent = area.hidden ? "Ver Boletim" : "Ocultar Boletim";
+        });
+    </script>
 </body>
 
 </html>
